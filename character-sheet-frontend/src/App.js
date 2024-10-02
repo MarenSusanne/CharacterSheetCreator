@@ -8,7 +8,7 @@ import './style.css';
 function App() {
   return (
     <Router>
-      <div>
+      <div class="fun-border width-pad">
         <h1 class="centre-content">D&D Character Maker</h1>
         <Routes>
           <Route path="/" element={<LogInComponent />} /> {/* Log in */}

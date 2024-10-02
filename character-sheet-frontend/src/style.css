@@ -7,3 +7,20 @@
 .fun-box{
     border: 2px solid pink;
 }
+.fun-border{
+    border-image: url('https://i.pinimg.com/originals/75/76/ea/7576eacd671c40ccf62241802e531c4c.png') round;
+    border-image-slice: calc(50 / 184 * 100%) calc(80 / 284 * 100%) fill;
+    border-image-width: 30px 48px;
+}
+.width-pad{
+    width: fit-content;
+    padding: 0vw 3vw 1vw 3vw;
+}
+.display-vertical{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.transparent50{
+    opacity: 50%;
+}

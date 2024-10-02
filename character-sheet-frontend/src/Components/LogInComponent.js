@@ -37,13 +37,23 @@ const handleChange = (e) => {
   return (
     <div>
       <h2 class="centre-content">Log In:</h2>
-      <form onSubmit={handleSubmit}>
+      <form class="display-vertical" onSubmit={handleSubmit}>
         <div>
-          <label>Username:</label>
-          <input
+          <label>Username: </label>
+          <input class="transparent50"
             type="text"
             name="username"
             value={userData.username}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div>
+          <label>Password: </label>
+          <input class="transparent50"
+            type="text"
+            name="password"
+            value={userData.password}
             onChange={handleChange}
             required
           />

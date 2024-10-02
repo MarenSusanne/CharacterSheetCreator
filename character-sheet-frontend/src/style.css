@@ -1,0 +1,9 @@
+
+.centre-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fun-box{
+    border: 2px solid pink;
+}

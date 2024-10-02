@@ -26,9 +26,9 @@ function ListComponent() {
 
   return (
     <div>
-      <h2>List of Characters</h2>
+      <h2 class="centre-content">List of Characters</h2>
       {items.map(item => (
-        <div key={item.id}>
+        <div class="centre-content fun-box" key={item.id}>
           {item.name} 
           <button onClick={() => handleDelete(item.id)}>Delete</button>
         </div>

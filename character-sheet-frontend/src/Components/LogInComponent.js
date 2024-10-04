@@ -58,6 +58,8 @@ const handleChange = (e) => {
             required
           />
         </div>
+        <button type="submit">Log In</button>
+        <button class="transparent50">Create new account</button>
       </form>
     </div>
   );

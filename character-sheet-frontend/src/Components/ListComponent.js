@@ -17,7 +17,7 @@ function ListComponent() {
   const handleDelete = (id) => {
     axios.delete(`http://localhost:5042/api/character/${id}`)
       .then(() => {
-        setItems(items.filter(item => item.id !== id)); // Update the state to remove the deleted item
+        setItems(items.filter(item => item.id !== id));
       })
       .catch(error => {
         console.error('Error deleting data:', error);

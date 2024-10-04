@@ -3,6 +3,7 @@ import LogInComponent from './Components/LogInComponent';
 import ListComponent from './Components/ListComponent';
 import CreateComponent from './Components/CreateComponent';
 import EditComponent from './Components/EditComponent';
+import ShowComponent from './Components/ShowComponent';
 import './style.css';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<LogInComponent />} /> {/* Log in */}
           <Route path="/home" element={<ListComponent />} /> {/* Homepage lists items */}
+          <Route path="/character/:id" element={<ShowComponent />} /> {/* Homepage lists items */}
           <Route path="/create" element={<CreateComponent />} /> {/* Create new item */}
           <Route path="/edit/:id" element={<EditComponent />} /> {/* Edit item by ID */}
         </Routes>

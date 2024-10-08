@@ -4,6 +4,7 @@ import ListComponent from './Components/ListComponent';
 import CreateComponent from './Components/CreateComponent';
 import EditComponent from './Components/EditComponent';
 import ShowComponent from './Components/ShowComponent';
+import ClassComponent from './/Components/Create/ClassComponent';
 import './style.css';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Route path="/home" element={<ListComponent />} /> {/* Homepage lists items */}
           <Route path="/character/:id" element={<ShowComponent />} /> {/* Homepage lists items */}
           <Route path="/create" element={<CreateComponent />} /> {/* Create new item */}
+          <Route path="/create/class" element={<ClassComponent />} /> {/* Create new item */}
           <Route path="/edit/:id" element={<EditComponent />} /> {/* Edit item by ID */}
         </Routes>
       </div>

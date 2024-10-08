@@ -36,8 +36,22 @@ namespace CharacterSheetCreator.Controllers
 
             return Ok(user.ToUserDto());
         }
+        [HttpPost]
+        [Route("login")]
+        public IActionResult Login([FromBody] LoginRequestDto loginDto)
+        {
+            var user = _context.Users.SingleOrDefault(u => u.UserName == loginDto.Username && u.Password == loginDto.Password);
+
+            if (user == null)
+            {
+                return Unauthorized(); // Return 401 if the user is not found
+            }
+
+            return Ok(user.ToUserDto()); // Or whatever data you want to return
+        }
 
         [HttpPost]
+        [Route("Create")]
         public IActionResult Create([FromBody] CreateUserRequestDto UserDto)
         {
             var userModel = UserDto.ToUserFromCreateDTO();

@@ -1,8 +1,10 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function ListComponent() {
   const [items, setItems] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios.get('http://localhost:5042/api/character')
@@ -24,15 +26,23 @@ function ListComponent() {
       });
   };
 
+  const handleCreateClick = () => {
+    navigate('/Create/class');
+  };
+  const handleCharacterClick = (id) => {
+    navigate(`/Character/${id}`);
+  };
+
   return (
     <div>
       <h2 class="centre-content">List of Characters</h2>
       {items.map(item => (
         <div class="centre-content fun-box" key={item.id}>
-          {item.name} 
+          <div onClick={() => handleCharacterClick(item.id)}>{item.name} </div>
           <button onClick={() => handleDelete(item.id)}>Delete</button>
         </div>
       ))}
+      <button onClick={handleCreateClick}>Make new Character</button>
     </div>
   );
 }

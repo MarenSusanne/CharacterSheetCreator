@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import LogInComponent from './Components/LogInComponent';
+import LogInComponent from './Components/LogIn/LogInComponent';
+import RegisterComponent from './Components/LogIn/RegisterComponent';
 import ListComponent from './Components/ListComponent';
 import CreateComponent from './Components/CreateComponent';
 import EditComponent from './Components/EditComponent';
@@ -13,7 +14,8 @@ function App() {
       <div class="fun-border width-pad">
         <h1 class="centre-content">D&D Character Maker</h1>
         <Routes>
-          <Route path="/" element={<LogInComponent />} /> {/* Log in */}
+          <Route path="/login" element={<LogInComponent />} /> {/* Log in */}
+          <Route path="/register" element={<RegisterComponent />} /> {/* Register */}
           <Route path="/home" element={<ListComponent />} /> {/* Homepage lists items */}
           <Route path="/character/:id" element={<ShowComponent />} /> {/* Homepage lists items */}
           <Route path="/create" element={<CreateComponent />} /> {/* Create new item */}

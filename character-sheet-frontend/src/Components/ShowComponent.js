@@ -82,24 +82,24 @@ const getModifier = (value) => {
   }
 
   const attributes = [
-    { name: 'Strength', value: item.strength },
-    { name: 'Dexterity', value: item.dexterity },
-    { name: 'Constitution', value: item.constitution },
-    { name: 'Intelligence', value: item.intelligence },
-    { name: 'Wisdom', value: item.wisdom },
-    { name: 'Charisma', value: item.charisma },
+    { name: 'STR', value: item.strength },
+    { name: 'DEX', value: item.dexterity },
+    { name: 'CON', value: item.constitution },
+    { name: 'INT', value: item.intelligence },
+    { name: 'WIS', value: item.wisdom },
+    { name: 'CHA', value: item.charisma },
   ];
 
 
   return (
     <div>
-        <div> {/* top info line */}
-            <div class="display-horisontal"> 
-                <div class="display-horisontal margin" style={{ '--standard-margin': '0vw 3vw 1vw 3vw' }}>
+        <div style={{ 'margin': '0vw 0vw -1.4vw 0vw' }}> {/* top info line */}
+            <div class="display-horisontal "> 
+                <div class="display-horisontal margin max-width" style={{ '--standard-margin': '0vw 3vw 1vw 3vw' }}>
                     <div>
                         <img class="portrait" src="/images/humanoid.jpg" alt="character profile"/>
                     </div>
-                    <div class="margin" style={{ lineHeight: '0.5', '--standard-margin': '-1vw 3vw 1vw 3vw' }}>
+                    <div class="margin" style={{ lineHeight: '0.1', '--standard-margin': '-1vw 3vw 1vw 2.5vw' }}>
                         <p>
                             <strong>{item.name} </strong>
                             <button class="button">Manage</button>
@@ -108,10 +108,10 @@ const getModifier = (value) => {
                         <div>Level {item.level}</div>
                     </div>
                 </div>
-                <div class="centre-content margin" style={{ '--standard-margin': '0px 0px 0px 175px' }}>
-                    <button class="margin button" style={{ '--standard-margin': '4px' }}>Short Rest</button>
-                    <button class="margin button" style={{ '--standard-margin': '4px' }}>Long Rest</button>
-                    <img class="width margin" src='/images/anvil.png' alt='' style={{ '--standard-width': '50px', '--standard-margin': '4px' }} />
+                <div class="centre-end-content">
+                    <button class="margin button" style={{ '--standard-margin': '0.2vw' }}>Short Rest</button>
+                    <button class="margin button" style={{ '--standard-margin': '0.2vw' }}>Long Rest</button>
+                    <img class="width margin" src='/images/anvil.png' alt='' style={{ '--standard-width': '3vw', '--standard-margin': '0.2vw' }} />
                 </div>
             </div>
         </div>
@@ -119,7 +119,7 @@ const getModifier = (value) => {
             <div> {/* Abilities */}
                 <div class="display-horisontal">
                     {attributes.map((attr) => (
-                        <div class="margin centre-items fun-small-border" key={attr.name} style={{ '--standard-margin': '0vw -1vw 1vw -1vw' }}>
+                        <div class="margin centre-items fun-small-border" key={attr.name} style={{ '--standard-margin': '0vw -0.3vw 1vw -0.9vw' }}>
                             <div class="text">{attr.name}</div>
                             <div>{getModifier(attr.value)}</div>
                             <div>{attr.value}</div>
@@ -127,18 +127,23 @@ const getModifier = (value) => {
                     ))}
                 </div>
             </div>
-            <div class="display-vertical margin fun-small-border centre-content" style={{ '--standard-margin': '0vw -1vw 1vw -1vw' }}> {/* Proficiency */}
-                <div class="text">Proficiency</div>
+            <div class="display-vertical margin fun-small-border centre-content" style={{ '--standard-margin': '0vw -1vw 1vw -1vw', 'width': '8.3vw', 'height': '5.3vw' }}> {/* Proficiency */}
+                <div class="text_long">Proficiency</div>
                 <div>{getBonusByLevel(item.level)}</div>
                 <div class="text">Bonus</div>
             </div>
-            <div> {/* Speed */}
-
+            <div class="display-vertical margin fun-small-border centre-content" style={{ '--standard-margin': '0vw -1vw 1vw -0.5vw', 'width': '8.1vw', 'height': '5.3vw' }}> {/* Speed */}
+                    <div>Walking</div>
+                    <div>30. ft</div>
+                    <div>Speed</div>
             </div>
-            <div> {/* Inspiration */}
-
+            <div class="display-vertical margin centre-content" style={{ '--standard-margin': '0vw -1vw 0vw -0.5vw', 'width': '7.1vw', 'height': '5vw' }}> {/* Inspiration */}
+              <div class="display-vertical fun-smallest-border centre-content"> {/* Inspiration */}
+              </div>
+              <div>Heroic</div>
+              <div>Inspiration</div>
             </div>
-            <div> {/* HP */}
+            <div class="display-vertical margin fun-small-border centre-content" style={{ '--standard-margin': '0vw -1vw 1vw -0.7vw', 'width': '21.5vw', 'height': '5.3vw' }}> {/* HP */}
 
             </div>
         </div>

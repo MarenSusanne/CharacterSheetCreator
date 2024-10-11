@@ -2,6 +2,7 @@
 using CharacterSheetCreator.Data;
 using Microsoft.EntityFrameworkCore;
 
+
 namespace CharacterSheetCreator
 {
     public class Program
@@ -43,6 +44,7 @@ namespace CharacterSheetCreator
             }
 
             app.UseCors("AllowFrontend");
+
 
             app.UseHttpsRedirection();
 

@@ -94,57 +94,67 @@ const getModifier = (value) => {
   return (
     <div>
         <div style={{ 'margin': '0vw 0vw -1.4vw 0vw' }}> {/* top info line */}
-            <div class="display-horisontal "> 
-                <div class="display-horisontal margin max-width" style={{ '--standard-margin': '0vw 3vw 1vw 3vw' }}>
+            <div className="display-horisontal "> 
+                <div className="display-horisontal margin max-width" style={{ '--standard-margin': '0vw 3vw 1vw 3vw' }}>
                     <div>
-                        <img class="portrait" src="/images/humanoid.jpg" alt="character profile"/>
+                        <img className="portrait" src="/images/humanoid.jpg" alt="character profile"/>
                     </div>
-                    <div class="margin" style={{ lineHeight: '0.1', '--standard-margin': '-1vw 3vw 1vw 2.5vw' }}>
+                    <div className="margin" style={{ lineHeight: '0.1', '--standard-margin': '-1vw 3vw 1vw 2.5vw' }}>
                         <p>
                             <strong>{item.name} </strong>
-                            <button class="button">Manage</button>
+                            <button className="button">Manage</button>
                         </p>
-                        <p class="transparent50">{item.race}  {item.class}  {item.level}</p>
+                        <p className="transparent50">{item.race}  {item.class}  {item.level}</p>
                         <div>Level {item.level}</div>
                     </div>
                 </div>
-                <div class="centre-end-content">
-                    <button class="margin button" style={{ '--standard-margin': '0.2vw' }}>Short Rest</button>
-                    <button class="margin button" style={{ '--standard-margin': '0.2vw' }}>Long Rest</button>
-                    <img class="width margin" src='/images/anvil.png' alt='' style={{ '--standard-width': '3vw', '--standard-margin': '0.2vw' }} />
+                <div className="centre-end-content">
+                    <button className="margin button" style={{ '--standard-margin': '0.2vw' }}>Short Rest</button>
+                    <button className="margin button" style={{ '--standard-margin': '0.2vw' }}>Long Rest</button>
+                    <img className="width margin" src='/images/anvil.png' alt='' style={{ '--standard-width': '3vw', '--standard-margin': '0.2vw' }} />
                 </div>
             </div>
         </div>
-        <div class="display-horisontal"> {/* second info line */}
+        <div className="display-horisontal"> {/* second info line */}
             <div> {/* Abilities */}
-                <div class="display-horisontal">
+                <div className="display-horisontal">
                     {attributes.map((attr) => (
-                        <div class="margin centre-items fun-small-border" key={attr.name} style={{ '--standard-margin': '0vw -0.3vw 1vw -0.9vw' }}>
-                            <div class="text">{attr.name}</div>
+                        <div className="margin centre-items fun-small-border" key={attr.name} style={{ '--standard-margin': '0vw -0.3vw 1vw -0.9vw' }}>
+                            <div className="text">{attr.name}</div>
                             <div>{getModifier(attr.value)}</div>
                             <div>{attr.value}</div>
                         </div>
                     ))}
                 </div>
             </div>
-            <div class="display-vertical margin fun-small-border centre-content" style={{ '--standard-margin': '0vw -1vw 1vw -1vw', 'width': '8.3vw', 'height': '5.3vw' }}> {/* Proficiency */}
-                <div class="text_long">Proficiency</div>
+            <div className="display-vertical margin fun-small-border centre-content" style={{ '--standard-margin': '0vw -1vw 1vw -1vw', 'width': '8.3vw', 'height': '5.3vw' }}> {/* Proficiency */}
+                <div className="text_long">Proficiency</div>
                 <div>{getBonusByLevel(item.level)}</div>
-                <div class="text">Bonus</div>
+                <div className="text">Bonus</div>
             </div>
-            <div class="display-vertical margin fun-small-border centre-content" style={{ '--standard-margin': '0vw -1vw 1vw -0.5vw', 'width': '8.1vw', 'height': '5.3vw' }}> {/* Speed */}
+            <div className="display-vertical margin fun-small-border centre-content" style={{ '--standard-margin': '0vw -1vw 1vw -0.5vw', 'width': '8.1vw', 'height': '5.3vw' }}> {/* Speed */}
                     <div>Walking</div>
                     <div>30. ft</div>
                     <div>Speed</div>
             </div>
-            <div class="display-vertical margin centre-content" style={{ '--standard-margin': '0vw -1vw 0vw -0.5vw', 'width': '7.1vw', 'height': '5vw' }}> {/* Inspiration */}
-              <div class="display-vertical fun-smallest-border centre-content"> {/* Inspiration */}
+            <div className="display-vertical margin centre-content" style={{ '--standard-margin': '0vw -1vw 0vw -0.5vw', 'width': '7.1vw', 'height': '5vw' }}> {/* Inspiration */}
+              <div className="display-vertical fun-smallest-border centre-content"> {/* Inspiration */}
               </div>
               <div>Heroic</div>
               <div>Inspiration</div>
             </div>
-            <div class="display-vertical margin fun-small-border centre-content" style={{ '--standard-margin': '0vw -1vw 1vw -0.7vw', 'width': '21.5vw', 'height': '5.3vw' }}> {/* HP */}
-
+            <div className="display-vertical margin fun-small-border centre-content" style={{ '--standard-margin': '0vw -1vw 1vw -0.7vw', 'width': '21.5vw', 'height': '5.3vw' }}> {/* HP */}
+                    <div className="health-box">
+                      <div className="health">HEAL</div>
+                      <input className="health"></input>
+                      <div className="health">DAMAGE</div>
+                    </div>
+                    <div className="display-vertical">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                    </div>
+                    <div></div>
             </div>
         </div>
         <div> {/* last info block */} 

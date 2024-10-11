@@ -11,8 +11,14 @@ import './style.css';
 function App() {
   return (
     <Router>
-      <div class="fun-border width-pad">
-        <h1 class="centre-content">D&D Character Maker</h1>
+      <div className="fun-border width-pad">
+        <h1 className="centre-content">D&D Character Maker</h1>
+        <div className="topnav">
+          <a href="#home">Characters</a>
+          <a href="#news">New Character</a>
+          <a href="#contact">Contact</a>
+          <a href="#about">About</a>
+        </div>
         <Routes>
           <Route path="/login" element={<LogInComponent />} /> {/* Log in */}
           <Route path="/register" element={<RegisterComponent />} /> {/* Register */}

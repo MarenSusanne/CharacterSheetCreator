@@ -37,7 +37,7 @@ function ClassComponent(){
                 
                 <div className="modal">
                     <div className="modal-content">
-                        <div class="modal-body">
+                        <div className="modal-body">
                             <div>
                                 <h4>{selectedClass}</h4>
                                 <p><i>{classes.find(c => c.Name === selectedClass)?.Tagline}</i></p>

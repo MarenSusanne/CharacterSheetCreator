@@ -141,3 +141,12 @@
     padding: 4px;
     margin: 4px 4px 4px 0px;
 }
+input{
+    background-color: transparent;
+}
+.health{
+    border: solid purple 1px;
+}
+.health-box{
+    width: 3vw;
+}

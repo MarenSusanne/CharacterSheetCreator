@@ -14,10 +14,9 @@ function App() {
       <div className="fun-border width-pad">
         <h1 className="centre-content">D&D Character Maker</h1>
         <div className="topnav">
-          <a href="home">Characters</a>
-          <a href="create/class">New Character</a>
-          <a href="#contact">Contact</a>
-          <a href="#about">About</a>
+          <a href="/home">Characters</a>
+          <a href="/create/class">New Character</a>
+          <a href="/login">Log in</a>
         </div>
         <Routes>
           <Route path="/login" element={<LogInComponent />} /> {/* Log in */}

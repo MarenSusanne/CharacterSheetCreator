@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const ShowComponent = () => {
   const { id } = useParams(); 
   const [item, setItem] = useState(null); 
   const [loading, setLoading] = useState(true); 
   const [error, setError] = useState(null); 
+  const navigate = useNavigate();
 
   const levelBonuses = [
     { level: 1, bonus: '+2' },
@@ -89,7 +91,9 @@ const getModifier = (value) => {
     { name: 'WIS', value: item.wisdom },
     { name: 'CHA', value: item.charisma },
   ];
-
+  const handleEdit = (id) => {
+    navigate(`/edit/${id}`);
+  };
 
   return (
     <div>
@@ -111,7 +115,7 @@ const getModifier = (value) => {
                 <div className="centre-end-content">
                     <button className="margin button" style={{ '--standard-margin': '0.2vw' }}>Short Rest</button>
                     <button className="margin button" style={{ '--standard-margin': '0.2vw' }}>Long Rest</button>
-                    <img className="width margin" src='/images/anvil.png' alt='' style={{ '--standard-width': '3vw', '--standard-margin': '0.2vw' }} />
+                    <img  onClick={() => handleEdit(item.id)} className="width margin" src='/images/anvil.png' alt='' style={{ '--standard-width': '3vw', '--standard-margin': '0.2vw', 'cursor': 'pointer' }} />
                 </div>
             </div>
         </div>
@@ -143,55 +147,57 @@ const getModifier = (value) => {
               <div>Heroic</div>
               <div>Inspiration</div>
             </div>
-            <div className="display-horizontal margin fun-small-border centre-content" style={{ '--standard-margin': '0vw -1vw 1vw -0.7vw', 'width': '21.5vw', 'height': '5.3vw' }}> {/* HP */}
+            <div className="display-horisontal margin fun-small-border centre-content health-container" style={{ '--standard-margin': '0vw -1vw 1vw -0.7vw', 'width': '21.5vw', 'height': '5.3vw' }}> {/* HP */}
                     <div>
                       <div className="health">HEAL</div>
                       <input className="health"></input>
                       <div className="health">DAMAGE</div>
                     </div>
-                    <div className="display-vertical">
-                      <div>
-                        <div>Current</div>
+                    <div className="display-vertical container">
+                      <div className='position-end'>Current</div>
+                      <div> </div>
                         <div>Max</div>
-                      </div>
-                      <div className="display-horizontal">
-                        <div>133</div> {/* current health */}
+                        <div className='position-end'>60</div> {/* current health */}
                         <div>/</div>
-                        <div>133</div> {/* max health */}
-                      </div>
-                      <div></div>
+                        <div>60</div> {/* max health */}
+                      <div> </div>
+                      <div className='hp'>Hit Points</div>
+                      <div> </div>
                     </div>
-                    <div></div>
+                    <div>
+                      <div>Temp</div>
+                      <div>--</div>
+                    </div>
             </div>
         </div>
-        <div> {/* last info block */} 
-                <div> {/* Left column */}
-                    <div> {/* Saving Throws */}
+        <div className="display-horisontal spacebetween"> {/* last info block */} 
+                <div className="testborder"> {/* Left column */}
+                    <div className="fun-small-border"> {/* Saving Throws */}
 
                     </div>
-                    <div> {/* Senses */}
+                    <div className="fun-small-border"> {/* Senses */}
 
                     </div>
-                    <div> {/* Proficiencies */}
+                    <div className="fun-small-border"> {/* Proficiencies */}
 
                     </div>
                 </div>
-            <div> {/* Middle column / skills */}
+            <div className="fun-small-border"> {/* Middle column / skills */}
 
             </div>
-            <div> {/* Right column */}
+            <div className="testborder"> {/* Right column */}
                 <div> {/* Top Line */}
-                    <div> {/* Initiative */}
+                    <div className="fun-small-border"> {/* Initiative */}
                     
                     </div>
-                    <div> {/* AC */}
+                    <div className="fun-small-border"> {/* AC */}
                         
                     </div>
-                    <div> {/* Defenses / Conditions */}
+                    <div className="fun-small-border"> {/* Defenses / Conditions */}
                         
                     </div>
                 </div>
-                <div> {/* Bottom Block */}
+                <div className="fun-small-border"> {/* Bottom Block */}
                     
                 </div>
             </div>

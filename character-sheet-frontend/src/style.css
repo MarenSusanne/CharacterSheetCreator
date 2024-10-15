@@ -34,7 +34,6 @@
 .fun-small-border{
     border-image: url('https://i.pinimg.com/originals/75/76/ea/7576eacd671c40ccf62241802e531c4c.png') round;
     border-image-slice: calc(50 / 184 * 100%) calc(80 / 284 * 100%) fill;
-    border-image-width: 30px 48px;    
     border-image-width: 70px 60px 60px 60px;
     width: 7.1vw;
     height: 5vw;
@@ -75,6 +74,13 @@
 .portrait{
     width: 4vw;
     margin: 0vw -2vw 1vw -2.61vw;
+}
+.topnav{
+    background-color: rgba(121, 5, 111, 0.404);
+    display: flex;
+    justify-content: space-evenly;
+    height: 1.6vw;
+    margin-bottom: 1vw;
 }
 .button{
     border-color: blueviolet;
@@ -148,4 +154,31 @@ input{
 }
 .pointer{
     cursor: pointer;
+}
+.health-container{
+    display: flex;
+    justify-content: space-evenly;
+}
+.container {
+    display: grid;
+    grid-template-columns: 2vw 0.1vw 2vw; /* 3 equal columns */
+    grid-template-rows: 0.3vw 0.3vw 0.3vw; /* Rows adjust based on content */
+    gap: 1vw; /* Space between grid items */
+    padding: 10px;
+}
+.position-end{
+    display: flex;
+    justify-content: end;
+}
+.hp{
+    display: flex;
+    white-space: nowrap;
+    margin-left: -2vw;
+}
+.testborder{
+    border: 1px solid black;
+}
+.spacebetween{
+    display: flex;
+    justify-content: space-evenly;
 }

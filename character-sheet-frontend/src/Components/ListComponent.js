@@ -16,15 +16,19 @@ function ListComponent() {
       });
   }, []);
 
-  const handleDelete = (id) => {
-    axios.delete(`http://localhost:5042/api/character/${id}`)
+  const handleEdit = (id) => {
+    navigate(`/edit/${id}`);
+  };
+
+  /*
+     axios.delete(`http://localhost:5042/api/character/${id}`)
       .then(() => {
         setItems(items.filter(item => item.id !== id));
       })
       .catch(error => {
         console.error('Error deleting data:', error);
       });
-  };
+   */
 
   const handleCreateClick = () => {
     navigate('/Create/class');
@@ -39,7 +43,7 @@ function ListComponent() {
       {items.map(item => (
         <div className="centre-content fun-box pointer" key={item.id}>
           <div onClick={() => handleCharacterClick(item.id)}>{item.name} </div>
-          <button onClick={() => handleDelete(item.id)}>Delete</button>
+          <button onClick={() => handleEdit(item.id)}>Edit</button>
         </div>
       ))}
       <button onClick={handleCreateClick}>Make new Character</button>

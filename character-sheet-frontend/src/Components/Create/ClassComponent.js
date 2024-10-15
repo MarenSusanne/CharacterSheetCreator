@@ -28,7 +28,7 @@ function ClassComponent(){
             </h3>
             <div>
                 {classNames.map((className, index) => (
-                    <div key={index} className="class-item" onClick={() => openDialog(className)}>
+                    <div key={index} className="class-item pointer" onClick={() => openDialog(className)}>
                     <span>{className}</span>
                 </div>
                 ))}
@@ -57,7 +57,7 @@ function ClassComponent(){
                                             <div key={idx}>
                                                 <div
                                                     onClick={() => toggleAbility(`${index}-${idx}`)}
-                                                    class="classAbility"
+                                                    class="classAbility pointer"
                                                 >
                                                     <b>{abilityDetail.Name}</b>
                                                 </div>

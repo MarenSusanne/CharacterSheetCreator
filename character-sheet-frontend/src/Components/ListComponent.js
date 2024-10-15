@@ -37,7 +37,7 @@ function ListComponent() {
     <div>
       <h2 className="centre-content">List of Characters</h2>
       {items.map(item => (
-        <div className="centre-content fun-box" key={item.id}>
+        <div className="centre-content fun-box pointer" key={item.id}>
           <div onClick={() => handleCharacterClick(item.id)}>{item.name} </div>
           <button onClick={() => handleDelete(item.id)}>Delete</button>
         </div>

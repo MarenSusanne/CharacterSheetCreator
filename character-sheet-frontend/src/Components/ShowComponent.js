@@ -143,15 +143,22 @@ const getModifier = (value) => {
               <div>Heroic</div>
               <div>Inspiration</div>
             </div>
-            <div className="display-vertical margin fun-small-border centre-content" style={{ '--standard-margin': '0vw -1vw 1vw -0.7vw', 'width': '21.5vw', 'height': '5.3vw' }}> {/* HP */}
-                    <div className="health-box">
+            <div className="display-horizontal margin fun-small-border centre-content" style={{ '--standard-margin': '0vw -1vw 1vw -0.7vw', 'width': '21.5vw', 'height': '5.3vw' }}> {/* HP */}
+                    <div>
                       <div className="health">HEAL</div>
                       <input className="health"></input>
                       <div className="health">DAMAGE</div>
                     </div>
                     <div className="display-vertical">
-                      <div></div>
-                      <div></div>
+                      <div>
+                        <div>Current</div>
+                        <div>Max</div>
+                      </div>
+                      <div className="display-horizontal">
+                        <div>133</div> {/* current health */}
+                        <div>/</div>
+                        <div>133</div> {/* max health */}
+                      </div>
                       <div></div>
                     </div>
                     <div></div>

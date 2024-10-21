@@ -51,7 +51,7 @@ namespace CharacterSheetCreator.Controllers
         }
 
         [HttpPost]
-        [Route("Create")]
+        [Route("create")]
         public IActionResult Create([FromBody] CreateUserRequestDto UserDto)
         {
             var userModel = UserDto.ToUserFromCreateDTO();

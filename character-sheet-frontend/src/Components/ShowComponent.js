@@ -39,24 +39,10 @@ const getBonusByLevel = (level) => {
 };
 
 const getModifier = (value) => {
-    if (value === 1) return '-5';
-    if (value >= 2 && value <= 3) return '-4';
-    if (value >= 4 && value <= 5) return '-3';
-    if (value >= 6 && value <= 7) return '-2';
-    if (value >= 8 && value <= 9) return '-1';
-    if (value >= 10 && value <= 11) return '+0';
-    if (value >= 12 && value <= 13) return '+1';
-    if (value >= 14 && value <= 15) return '+2';
-    if (value >= 16 && value <= 17) return '+3';
-    if (value >= 18 && value <= 19) return '+4';
-    if (value >= 20 && value <= 21) return '+5';
-    if (value >= 22 && value <= 23) return '+6';
-    if (value >= 24 && value <= 25) return '+7';
-    if (value >= 26 && value <= 27) return '+8';
-    if (value >= 28 && value <= 29) return '+9';
-    if (value === 30) return '+10';
-    return null;
-  };
+  if (value < 1 || value > 30) return null;
+  const modifier = Math.floor((value - 10) / 2);
+  return (modifier >= 0 ? `+${modifier}` : `${modifier}`); 
+}
 
   useEffect(() => {
     
@@ -170,34 +156,35 @@ const getModifier = (value) => {
                     </div>
             </div>
         </div>
-        <div className="display-horisontal spacebetween"> {/* last info block */} 
-                <div className="testborder"> {/* Left column */}
-                    <div className="fun-small-border"> {/* Saving Throws */}
+        <div className="display-horisontal" style={{ 'margin': '-0.5vw 0vw 0vw 0vw', 'width' : '78vw'}}> {/* last info block */} 
+                <div className="" > {/* Left column */}
+                    <div className="fun-small-border" style={{ 'margin': '0vw 0vw 0.3vw -1.8vw', 'width': '20.8vw', 'height': '12.4vw'}}> {/* Saving Throws */}
 
                     </div>
-                    <div className="fun-small-border"> {/* Senses */}
+                    <div className="fun-small-border" style={{ 'margin': '0vw 0vw 0.3vw -1.8vw', 'width': '20.8vw', 'height': '12.4vw'}}> {/* Senses */}
 
                     </div>
-                    <div className="fun-small-border"> {/* Proficiencies */}
+                    <div className="fun-small-border" style={{ 'margin': '0vw 0vw 0.3vw -1.8vw', 'width': '20.8vw', 'height': '18vw'}}> {/* Proficiencies */}
 
                     </div>
                 </div>
-            <div className="fun-small-border"> {/* Middle column / skills */}
+            <div className="fun-small-border" style={{ 'margin': '0vw 0vw 0.3vw -3vw', 'width': '20.8vw', 'height': '43.4vw'}}> {/* Middle column / skills */}
 
             </div>
-            <div className="testborder"> {/* Right column */}
-                <div> {/* Top Line */}
-                    <div className="fun-small-border"> {/* Initiative */}
-                    
+            <div className="" style={{ 'margin': '0vw 0vw 0vw -2.2vw', 'width': '41vw', 'height': '43.4vw'}}> {/* Right column */}
+                <div className='display-horisontal' style={{'margin-bottom' : '1vw'}}> {/* Top Line */}
+                    <div> {/* Initiative */}
+                      <div className='centre-content'>Initiative</div>
+                      <div className="fun-small-border" style={{ 'margin': '0vw 0vw 0vw 0.5vw', 'width': '7.7vw', 'height': '4vw'}}></div>
                     </div>
-                    <div className="fun-small-border"> {/* AC */}
+                    <div className="fun-small-border" style={{ 'margin': '0vw 0vw 0vw -1.6vw', 'width': '8.5vw', 'height': '6vw'}}> {/* AC */}
                         
                     </div>
-                    <div className="fun-small-border"> {/* Defenses / Conditions */}
+                    <div className="fun-small-border" style={{ 'margin': '0vw 0vw 0vw -1.9vw', 'width': '27vw', 'height': '6vw'}}> {/* Defenses / Conditions */}
                         
                     </div>
                 </div>
-                <div className="fun-small-border"> {/* Bottom Block */}
+                <div className="fun-small-border" style={{ 'margin': '0vw 0vw 0vw -1vw', 'width': '42vw', 'height': '36.3vw'}}> {/* Bottom Block */}
                     
                 </div>
             </div>
@@ -207,20 +194,3 @@ const getModifier = (value) => {
 };
 
 export default ShowComponent;
-
-
-/*<div>
-      <h2>Character Details</h2>
-      <ul>
-        <li><strong>Name:</strong> {item.name}</li>
-        <li><strong>Class:</strong> {item.class}</li>
-        <li><strong>Race:</strong> {item.race}</li>
-        <li><strong>Level:</strong> {item.level}</li>
-        <li><strong>Strength:</strong> {item.strength}</li>
-        <li><strong>Dexterity:</strong> {item.dexterity}</li>
-        <li><strong>Constitution:</strong> {item.constitution}</li>
-        <li><strong>Intelligence:</strong> {item.intelligence}</li>
-        <li><strong>Wisdom:</strong> {item.wisdom}</li>
-        <li><strong>Charisma:</strong> {item.charisma}</li>
-      </ul>
-    </div> */

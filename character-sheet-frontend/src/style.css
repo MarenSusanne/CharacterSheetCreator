@@ -48,7 +48,7 @@
 .width-pad{
     width: var(--standard-width);
     padding: var(--standard-padding);
-    height: 100vw;
+    height: 62vw;
 }
 .width{
     width: var(--standard-width)

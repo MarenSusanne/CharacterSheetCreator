@@ -1,108 +1,157 @@
-:root{
+:root {
     --standard-height: 100px;
     --standard-margin: auto;
     --standard-padding: 0vw 3vw 1vw 3vw;
     --standard-width: 74vw;
+
+    /* Color scheme */
+    --primary-color: #4b3a53;  /* Dark Umber */
+    --secondary-color: #a21459;  /* Tarnished Teal */
+    --accent-color: #a21459;  /* Burnished Gold */
+    --background-light: #242125;  /* Worn Leather Brown */
+    --background-dark: #090606;  /* Deep Walnut */
+    --border-color: #ef8051;  /* Aged Pewter */
+    --text-color: #d9e3e4;  /* Weathered Parchment */
+    --hover-color: rgba(164, 135, 61, 0.3);  /* Faded Gold */
 }
+
+a {
+    color: inherit;
+}
+
 .centre-content {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.centre-end-content{
+
+.centre-end-content {
     display: flex;
     justify-content: end;
     align-items: center;
 }
+
 .centre-items {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.max-width{
+
+.max-width {
     width: 54vw;
 }
-.fun-box{
-    border: 2px solid rgb(145, 20, 117);
+
+.fun-box {
+    border: 2px solid var(--accent-color);
+    border-radius: 8px;
+    box-shadow: 0 0 5px var(--accent-color), inset 0 0 8px rgba(0, 0, 0, 0.3);
+    padding: 10px;
 }
-.fun-border{
-    border-image: url('https://i.pinimg.com/originals/75/76/ea/7576eacd671c40ccf62241802e531c4c.png') round;
-    border-image-slice: calc(50 / 184 * 100%) calc(80 / 284 * 100%) fill;
-    border-image-width: 30px 48px;
+
+.fun-border {
+    border: 3px solid var(--secondary-color);
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), inset 0 0 8px rgba(255, 255, 255, 0.1);
 }
-.fun-small-border{
-    border-image: url('https://i.pinimg.com/originals/75/76/ea/7576eacd671c40ccf62241802e531c4c.png') round;
-    border-image-slice: calc(50 / 184 * 100%) calc(80 / 284 * 100%) fill;
-    border-image-width: 70px 60px 60px 60px;
+
+.fun-small-border {
+    border: 3px double var(--primary-color);
+    border-radius: 8px;
+    padding: 5px;
+    box-shadow: 0 0 4px var(--border-color), inset 0 0 5px rgba(255, 255, 255, 0.2);
     width: 7.1vw;
     height: 5vw;
     box-sizing: border-box;
 }
-.fun-smallest-border{
-    border: solid black 1px;
+
+.fun-smallest-border {
+    border: 1px dashed var(--border-color);
+    border-radius: 4px;
+    padding: 4px;
     width: 4vw;
     height: 3vw;
     box-sizing: border-box;
+    box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.2);
 }
-.width-pad{
+
+
+.width-pad {
     width: var(--standard-width);
     padding: var(--standard-padding);
     height: 62vw;
 }
-.width{
-    width: var(--standard-width)
+
+.width {
+    width: var(--standard-width);
 }
-.padding{
+
+.padding {
     padding: var(--standard-padding);
 }
-.margin{
+
+.margin {
     margin: var(--standard-margin);
 }
-.display-vertical{
+
+.display-vertical {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.display-horisontal{
+
+.display-horisontal {
     display: flex;
     flex-direction: row;
 }
-.transparent50{
-    opacity: 50%;
+
+.transparent50 {
+    opacity: 0.5;
 }
-.portrait{
+
+.portrait {
     width: 4vw;
     margin: 0vw -2vw 1vw -2.61vw;
 }
-.topnav{
-    background-color: rgba(121, 5, 111, 0.404);
+
+.topnav {
+    background-color: var(--primary-color);
     display: flex;
     justify-content: space-evenly;
     height: 1.6vw;
     margin-bottom: 1vw;
 }
-.button{
-    border-color: blueviolet;
+
+.button {
+    border-color: var(--accent-color);
     border-radius: 8px;
-    background-color: rgba(170, 11, 117, 0);
-    
+    background-color: rgba(0, 0, 0, 0);
+    color: var(--text-color);
 }
-.button:hover{
-    background-color: rgba(0, 0, 0, 0.466);
+
+.button:hover {
+    background-color: var(--hover-color);
     cursor: pointer;
 }
-.text{
+
+.text {
     font-size: 1vw;
+    color: var(--text-color);
 }
-.text_long{
+
+.text_long {
     font-size: 0.8vw;
+    color: var(--text-color);
 }
-.class-item{
+
+.class-item {
     border: 1px solid rgba(128, 128, 128, 0.596);
-    padding: 4px 4px 4px 4px;
+    padding: 4px;
     margin: 4px 4px 4px 0px;
+    color: var(--text-color);
 }
+
 .modal {
     position: fixed;
     top: 0;
@@ -119,66 +168,79 @@
 .modal-content {
     position: relative;
     width: 70%;
-    max-height: 80vh; 
+    max-height: 80vh;
     display: flex;
     flex-direction: column;
-    background-color: white;
+    background-color: var(--background-light);
+    color: var(--text-color);
 }
 
 .modal-body {
     flex: 1;
-    overflow-y: auto; 
+    overflow-y: auto;
     padding: 20px;
-    max-height: calc(80vh - 60px); 
+    max-height: calc(80vh - 60px);
 }
+
 .modal-footer {
     display: flex;
     justify-content: flex-end;
     padding: 10px;
     background-color: #f1f1f1;
     border-top: 1px solid #ccc;
-    height: 40px; 
-    position: relative;
+    height: 40px;
 }
-.classAbility{
-    border: 1px rgba(128, 128, 128, 0.726) solid;
+
+.classAbility {
+    border: 1px solid rgba(128, 128, 128, 0.726);
     padding: 4px;
     margin: 4px 4px 4px 0px;
+    color: var(--text-color);
 }
-input{
+
+input {
     background-color: transparent;
+    color: var(--text-color);
 }
-.health{
-    border: solid purple 1px;
+
+.health {
+    border: 1px solid var(--primary-color);
     width: 3vw;
 }
-.pointer{
+
+.pointer {
     cursor: pointer;
 }
-.health-container{
+
+.health-container {
     display: flex;
     justify-content: space-evenly;
 }
+
 .container {
     display: grid;
-    grid-template-columns: 2vw 0.1vw 2vw; /* 3 equal columns */
-    grid-template-rows: 0.3vw 0.3vw 0.3vw; /* Rows adjust based on content */
-    gap: 1vw; /* Space between grid items */
+    grid-template-columns: 2vw 0.1vw 2vw;
+    grid-template-rows: 0.3vw 0.3vw 0.3vw;
+    gap: 1vw;
     padding: 10px;
 }
-.position-end{
+
+.position-end {
     display: flex;
     justify-content: end;
 }
-.hp{
+
+.hp {
     display: flex;
     white-space: nowrap;
     margin-left: -2vw;
 }
-.testborder{
+
+.testborder {
     border: 1px solid black;
 }
-.spacebetween{
+
+.spacebetween {
     display: flex;
     justify-content: space-evenly;
 }

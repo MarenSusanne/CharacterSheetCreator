@@ -321,7 +321,7 @@ const filteredSkills = getSkills(item).filter(skill => selectedSkills.includes(s
                 })}
               </div>
             </div>
-            <div>Saving Throw Madifiers</div>
+            <div>Saving Throw Modifiers</div>
             <div>SAVING THROWS</div>
           </div>
           <div

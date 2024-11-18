@@ -3,9 +3,7 @@ const classes = [
         Name: "Barbarian",
         Tagline: "A Fierce Warrior of Primal Rage",
         Description: "Barbarians are mighty warriors who are powered by primal forces of the multiverse that manifest as a Rage.",
-        Hit_Die: "d12",
         Primary_Ability: "Strength",
-        Saves: "Strength & Constitution",
         Abilities: [
             {Level_1: [
                 {

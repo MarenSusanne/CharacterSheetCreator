@@ -46,24 +46,46 @@ function StoredNewCharacter() {
   // Handle character creation (POST request to backend)
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     // Combine the character data and abilities into one object
     const characterData = {
       ...newCharacterData,
       ...abilities
     };
-
+  
     try {
       // Send POST request to backend API
       const response = await axios.post('http://localhost:5042/api/character', characterData);
       console.log('Character created:', response.data);
-
-      // Redirect to the next step in the character creation process
-      navigate('/create/race');
+  
+      // After successful character creation, clear localStorage
+      localStorage.removeItem('newCharacter');  // Removes only the character data
+      localStorage.removeItem('abilities');     // Removes only the abilities data
+  
+      // Optionally reset state to default values
+      setNewCharacterData({
+        name: '',
+        class: '',
+        race: '',
+        level: '1',
+        background: ''
+      });
+      setAbilities({
+        strength: 0,
+        dexterity: 0,
+        constitution: 0,
+        intelligence: 0,
+        wisdom: 0,
+        charisma: 0
+      });
+  
+      // Redirect to next step (or home, or reset to the beginning)
+      navigate('/home');
     } catch (error) {
       console.error('Error creating character:', error);
     }
   };
+  
 
   return (
     <div>

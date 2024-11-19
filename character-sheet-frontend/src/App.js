@@ -2,7 +2,6 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import LogInComponent from './Components/LogIn/LogInComponent';
 import RegisterComponent from './Components/LogIn/RegisterComponent';
 import ListComponent from './Components/ListComponent';
-import CreateComponent from './Components/CreateComponent';
 import EditComponent from './Components/EditComponent';
 import ShowComponent from './Components/ShowComponent';
 import Races from './/Components/Create/RaceComponent';
@@ -27,13 +26,12 @@ function App() {
           <Route path="/register" element={<RegisterComponent />} /> {/* Register */}
           <Route path="/home" element={<ListComponent />} /> {/* Homepage lists items */}
           <Route path="/character/:id" element={<ShowComponent />} /> {/* Homepage lists items */}
-          <Route path="/create" element={<CreateComponent />} /> {/* Create new item */}
+          <Route path="/create" element={<StoredNewCharacter />} /> {/* Create new item */}
           <Route path="/create/class" element={<Classes />} /> {/* Create new item */}
           <Route path="/create/race" element={<Races />} /> {/* Create new item */}
           <Route path="/create/background" element={<Background />} /> {/* Create new item */}
           <Route path="/create/abilities" element={<Abilities />} /> {/* Create new item */}
           <Route path="/edit/:id" element={<EditComponent />} /> {/* Edit item by ID */}
-          <Route path="/new-character" element={<StoredNewCharacter />} />
         </Routes>
       </div>
     </Router>

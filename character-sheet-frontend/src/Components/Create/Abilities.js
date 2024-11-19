@@ -108,7 +108,7 @@ function Abilities() {
           />
         </div>
       </form>
-      <button onClick={() => navigate('/new-character')}>Save Abilities</button>
+      <button onClick={() => navigate('/create')}>Save Abilities</button>
     </div>
   );
 }

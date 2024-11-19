@@ -175,7 +175,7 @@ const filteredSkills = getSkills(item).filter(skill => selectedSkills.includes(s
                 <div
                   className="margin centre-items fun-small-border"
                   key={attr.name}
-                  style={{ "--standard-margin": "0vw -0.3vw 1vw -0.9vw" }}
+                  style={{ "--standard-margin": "0vw 0.5vw 1vw -0vw" }}
                 >
                   <div className="text">{attr.name}</div>
                   <div>
@@ -190,7 +190,7 @@ const filteredSkills = getSkills(item).filter(skill => selectedSkills.includes(s
         <div
           className="display-vertical margin fun-small-border centre-content"
           style={{
-            "--standard-margin": "0vw -1vw 1vw -1vw",
+            "--standard-margin": "0vw 0.5vw 1vw -0vw",
             width: "8.3vw",
             height: "5.3vw",
           }}
@@ -204,8 +204,8 @@ const filteredSkills = getSkills(item).filter(skill => selectedSkills.includes(s
         <div
           className="display-vertical margin fun-small-border centre-content"
           style={{
-            "--standard-margin": "0vw -1vw 1vw -0.5vw",
-            width: "8.1vw",
+            "--standard-margin": "0vw 0vw 1vw -0vw",
+            width: "8vw",
             height: "5.3vw",
           }}
         >
@@ -218,7 +218,7 @@ const filteredSkills = getSkills(item).filter(skill => selectedSkills.includes(s
         <div
           className="display-vertical margin centre-content"
           style={{
-            "--standard-margin": "0vw -1vw 0vw -0.5vw",
+            "--standard-margin": "0vw -0vw 0vw -0vw",
             width: "7.1vw",
             height: "5vw",
           }}
@@ -235,7 +235,7 @@ const filteredSkills = getSkills(item).filter(skill => selectedSkills.includes(s
         <div
           className="display-horisontal margin fun-small-border centre-content health-container"
           style={{
-            "--standard-margin": "0vw -1vw 1vw -0.7vw",
+            "--standard-margin": "0vw -0vw 1vw -0vw",
             width: "21.5vw",
             height: "5.3vw",
           }}
@@ -276,8 +276,8 @@ const filteredSkills = getSkills(item).filter(skill => selectedSkills.includes(s
           <div
             className="fun-small-border"
             style={{
-              margin: "0vw 0vw 0.3vw -1.8vw",
-              width: "20.8vw",
+              margin: "0vw 0.5vw 0.3vw -0vw",
+              width: "16vw",
               height: "12.4vw",
             }}
           >
@@ -327,8 +327,8 @@ const filteredSkills = getSkills(item).filter(skill => selectedSkills.includes(s
           <div
             className="fun-small-border"
             style={{
-              margin: "0vw 0vw 0.3vw -1.8vw",
-              width: "20.8vw",
+              margin: "0vw 0.5vw 0.3vw -0vw",
+              width: "16vw",
               height: "12.4vw",
             }}
           >
@@ -346,8 +346,8 @@ const filteredSkills = getSkills(item).filter(skill => selectedSkills.includes(s
           <div
             className="fun-small-border"
             style={{
-              margin: "0vw 0vw 0.3vw -1.8vw",
-              width: "20.8vw",
+              margin: "0vw 0.5vw 0.3vw -0vw",
+              width: "16vw",
               height: "18vw",
             }}
           >
@@ -358,8 +358,8 @@ const filteredSkills = getSkills(item).filter(skill => selectedSkills.includes(s
         <div
           className="fun-small-border"
           style={{
-            margin: "0vw 0vw 0.3vw -3vw",
-            width: "20.8vw",
+            margin: "0vw 0.5vw 0.3vw -0vw",
+            width: "16vw",
             height: "43.4vw",
           }}
         >
@@ -378,7 +378,7 @@ const filteredSkills = getSkills(item).filter(skill => selectedSkills.includes(s
         <div
           className=""
           style={{
-            margin: "0vw 0vw 0vw -2.2vw",
+            margin: "0vw 0vw 0vw -0vw",
             width: "41vw",
             height: "43.4vw",
           }}
@@ -398,8 +398,8 @@ const filteredSkills = getSkills(item).filter(skill => selectedSkills.includes(s
               <div
                 className="fun-small-border"
                 style={{
-                  margin: "0vw 0vw 0vw 0.5vw",
-                  width: "7.7vw",
+                  margin: "0vw 1.25vw 0vw 1.25vw",
+                  width: "5vw",
                   height: "4vw",
                 }}
               >{(() => {
@@ -410,8 +410,8 @@ const filteredSkills = getSkills(item).filter(skill => selectedSkills.includes(s
             <div
               className="fun-small-border"
               style={{
-                margin: "0vw 0vw 0vw -1.6vw",
-                width: "8.5vw",
+                margin: "0vw 0.5vw 0vw 0.6vw",
+                width: "7.7vw",
                 height: "6vw",
               }}
             >
@@ -424,7 +424,7 @@ const filteredSkills = getSkills(item).filter(skill => selectedSkills.includes(s
             <div
               className="fun-small-border"
               style={{
-                margin: "0vw 0vw 0vw -1.9vw",
+                margin: "0vw 0vw 0vw -0vw",
                 width: "27vw",
                 height: "6vw",
               }}
@@ -436,8 +436,8 @@ const filteredSkills = getSkills(item).filter(skill => selectedSkills.includes(s
           <div
             className="fun-small-border"
             style={{
-              margin: "0vw 0vw 0vw -1vw",
-              width: "42vw",
+              margin: "0vw 0vw 0vw -0vw",
+              width: "41vw",
               height: "36.3vw",
             }}
           >

@@ -114,8 +114,6 @@ function ClassList() {
         ))}
       </div>
 
-      {loading && <p>Loading class details...</p>}
-
       {selectedClass && classDetails && (
         <div className="modal">
           <div className="modal-content">
@@ -161,6 +159,8 @@ function ClassList() {
                       )}
                     </div>
                   ))
+                ) : loading ? (
+                  <p>Loading class details...</p>
                 ) : (
                   <p>No features available.</p>
                 )}

@@ -283,15 +283,19 @@ const filteredSkills = getSkills(item).filter(skill => selectedSkills.includes(s
           >
             {" "}
             {/* Saving Throws */}
-            <div className="display-horisontal">
-              <div>
+            <div className="display-horisontal spacebetween">
+              <div className="st-cont">
                 {attributes.slice(0, 3).map((attr) => {
                   const modifier = getModifier(attr.value);
                   return (
                     <div
-                      className="display-horisontal"
+                      className="display-horisontal spacebetween fun-small-border"
                       key={attr.name}
-                      style={{}}
+                      style={{
+                        margin: "0vw 0.6vw 0.3vw -0vw",
+                        width: "7vw",
+                        height: "2vw",
+                      }}
                     >
                       <div>○</div> {/*  */}
                       <div className="text">{attr.name}</div>
@@ -302,14 +306,18 @@ const filteredSkills = getSkills(item).filter(skill => selectedSkills.includes(s
                   );
                 })}
               </div>
-              <div>
+              <div className="st-cont">
                 {attributes.slice(-3).map((attr) => {
                   const modifier = getModifier(attr.value);
                   return (
                     <div
-                      className="display-horisontal"
+                      className="display-horisontal spacebetween fun-small-border"
                       key={attr.name}
-                      style={{}}
+                      style={{
+                        margin: "0vw -0vw 0.3vw -0vw",
+                        width: "7vw",
+                        height: "2vw",
+                      }}
                     >
                       <div>○</div>
                       <div className="text">{attr.name}</div>
@@ -321,8 +329,10 @@ const filteredSkills = getSkills(item).filter(skill => selectedSkills.includes(s
                 })}
               </div>
             </div>
-            <div>Saving Throw Modifiers</div>
-            <div>SAVING THROWS</div>
+            <div className="centre-content transparent50 lower">
+              Saving Throw Modifiers
+            </div>
+            <div className="centre-content">SAVING THROWS</div>
           </div>
           <div
             className="fun-small-border"
@@ -335,13 +345,32 @@ const filteredSkills = getSkills(item).filter(skill => selectedSkills.includes(s
             {/* Senses */}
             {filteredSkills.map((skill) => {
               return (
-                <div className="display-horisontal" key={skill.name} style={{}}>
-                  <div>{skill.value + 10}</div>
-                  <div className="text">{skill.name}</div>
+                <div
+                  className="display-horisontal fun-small-border"
+                  key={skill.name}
+                  style={{
+                    margin: "0vw 0vw 0.6vw 0.2vw",
+                    width: "14.7vw",
+                    height: "2vw",
+                  }}
+                >
+                  <div
+                    className="centre-content"
+                    style={{ margin: "0vw 0.6vw 0vw 0.2vw" }}
+                  >
+                    {skill.value + 10}
+                  </div>
+                  <div className="text centre-content">{skill.name}</div>
                 </div>
               );
             })}
-
+            <div className="centre-content transparent50"
+                    style={{
+                    margin: "1.6vw 0vw 0vw 0vw",
+                  }}>
+              Additional Sense Types
+            </div>
+            <div className="centre-content">SENSES</div>
           </div>
           <div
             className="fun-small-border"
@@ -353,12 +382,35 @@ const filteredSkills = getSkills(item).filter(skill => selectedSkills.includes(s
           >
             {" "}
             {/* Proficiencies */}
+            <div className='spacebetween-vertical'
+              style={{
+              height: "13vw",
+            }}>
+              <div>
+                <div>ARMOR</div>
+                <div></div>
+              </div>
+              <div>
+                <div>WEAPONS</div>
+                <div></div>
+              </div>
+              <div>
+                <div>TOOLS</div>
+                <div></div>
+              </div>
+              <div>
+                <div>LANGUAGES</div>
+                <div></div>
+              </div>
+            </div>
+            <div className="centre-content lower">PROFICIENCIES & TRAINING</div>
           </div>
         </div>
         <div
           className="fun-small-border"
           style={{
             margin: "0vw 0.5vw 0.3vw -0vw",
+            padding: "0.8vw 0.4vw 0vw 0.8vw",
             width: "16vw",
             height: "43.4vw",
           }}
@@ -366,10 +418,14 @@ const filteredSkills = getSkills(item).filter(skill => selectedSkills.includes(s
           {" "}
           {/* Middle column / skills */}
           {getSkills(item).map((skill) => {
-            const modifier = skill.value; 
+            const modifier = skill.value;
             return (
-              <div className="display-horisontal" key={skill.name} style={{}}>
-                <div className="text">{skill.name}</div>
+              <div className="display-horisontal spacebetween" key={skill.name} style={{margin: "0vw 0vw 1vw 0vw",}}>
+                <div className="display-horisontal">
+                  <div className="text" style={{width: "1.5vw"}}>○</div>
+                  <div className="text" style={{width: "2.5vw"}}>{skill.type}</div>
+                  <div className="text" style={{width: "8vw"}}>{skill.name}</div>
+                </div>
                 <div>{modifier >= 0 ? `+${modifier}` : `${modifier}`}</div>
               </div>
             );
@@ -402,10 +458,12 @@ const filteredSkills = getSkills(item).filter(skill => selectedSkills.includes(s
                   width: "5vw",
                   height: "4vw",
                 }}
-              >{(() => {
-                const modifier = getModifier(item.dexterity);
-                return modifier >= 0 ? `+${modifier}` : `${modifier}`;
-            })()}</div>
+              >
+                {(() => {
+                  const modifier = getModifier(item.dexterity);
+                  return modifier >= 0 ? `+${modifier}` : `${modifier}`;
+                })()}
+              </div>
             </div>
             <div
               className="fun-small-border"
@@ -443,6 +501,26 @@ const filteredSkills = getSkills(item).filter(skill => selectedSkills.includes(s
           >
             {" "}
             {/* Bottom Block */}
+            <div className="display-horisontal spacebetween">
+              {/* Navigation */}
+              <div>Action</div>
+              <div className='transparent50'>Spells</div>
+              <div className='transparent50'>Inventory</div>
+              <div className='transparent50'>Features & Traits</div>
+              <div className='transparent50'>Background</div>
+              <div className='transparent50'>Notes</div>
+              <div className='transparent50'>Extras</div>
+            </div>
+            <div>
+              {/* Content */}
+              <div id="Actions" className='testborder information-block'></div>
+              <div id="Spells" className='testborder information-block'></div>
+              <div id="Inventory" className='testborder information-block'></div>
+              <div id="Features-&-Traits" className='testborder information-block'></div>
+              <div id="Background" className='testborder information-block'></div>
+              <div id="Notes" className='testborder information-block'></div>
+              <div id="Extras" className='testborder information-block'></div>
+            </div>
           </div>
         </div>
       </div>

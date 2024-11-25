@@ -22,7 +22,6 @@ a {
 .centre-content {
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 .centre-end-content {
@@ -242,5 +241,22 @@ input {
 
 .spacebetween {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    padding: 0vw 0.8vw 0vw 0.2vw;
+}
+.spacebetween-vertical {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.st-cont{
+    width: 10vw;
+}
+.lower{
+    margin: 1.8vw 0vw 0vw 0vw;
+}
+.information-block{
+    height: 34vw;
+    width: 39.8vw;
+    position: absolute;
 }

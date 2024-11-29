@@ -9,6 +9,11 @@ const ShowComponent = () => {
   const [loading, setLoading] = useState(true); 
   const [error, setError] = useState(null); 
   const navigate = useNavigate();
+  const [activeTab, setActiveTab] = useState("Actions");
+
+  const handleClick = (id) => {
+    setActiveTab(id);
+  };
 
   const getBonusByLevel = (level) => {
     if (level < 1 || level > 20) return null;
@@ -92,6 +97,21 @@ const getModifier = (value) => {
         return { ...skill, value }; 
     });
 };
+
+const nonSpellCastingClasses = ["Fighter", "Rogue", "Barbarian", "Monk"];
+
+const tabs = [
+  { id: "Actions", label: "Action" },
+  ...(!nonSpellCastingClasses.includes(item.class)
+  ? [{ id: "Spells", label: "Spells" }]
+  : []),
+  { id: "Inventory", label: "Inventory" },
+  { id: "Features-&-Traits", label: "Features & Traits" },
+  { id: "Background", label: "Background" },
+  { id: "Notes", label: "Notes" },
+  { id: "Extras", label: "Extras" },
+];
+
 const selectedSkills = ['Perception', 'Investigation', 'Insight'];
 
 const filteredSkills = getSkills(item).filter(skill => selectedSkills.includes(skill.name));
@@ -101,6 +121,8 @@ const filteredSkills = getSkills(item).filter(skill => selectedSkills.includes(s
     navigate(`/edit/${id}`);
   };
 
+
+  
   return (
     <div>
       <div style={{ margin: "0vw 0vw -1.4vw 0vw" }}>
@@ -452,11 +474,12 @@ const filteredSkills = getSkills(item).filter(skill => selectedSkills.includes(s
               {/* Initiative */}
               <div className="centre-content">Initiative</div>
               <div
-                className="fun-small-border"
+                className="fun-small-border centre-items"
                 style={{
                   margin: "0vw 1.25vw 0vw 1.25vw",
                   width: "5vw",
                   height: "4vw",
+                  fontSize: "1.5vw",
                 }}
               >
                 {(() => {
@@ -492,36 +515,50 @@ const filteredSkills = getSkills(item).filter(skill => selectedSkills.includes(s
             </div>
           </div>
           <div
-            className="fun-small-border"
-            style={{
-              margin: "0vw 0vw 0vw -0vw",
-              width: "41vw",
-              height: "36.3vw",
-            }}
+      className="fun-small-border"
+      style={{
+        margin: "0vw 0vw 0vw -0vw",
+        width: "41vw",
+        height: "36.3vw",
+      }}
+    >
+      {/* Bottom Block */}
+      <div className="display-horisontal spacebetween">
+        {/* Navigation */}
+        {tabs.map((tab) => (
+          <div
+            key={tab.id}
+            className={`pointer ${activeTab !== tab.id ? "transparent50" : ""}`}
+            onClick={() => handleClick(tab.id)}
           >
-            {" "}
-            {/* Bottom Block */}
-            <div className="display-horisontal spacebetween">
-              {/* Navigation */}
-              <div>Action</div>
-              <div className='transparent50'>Spells</div>
-              <div className='transparent50'>Inventory</div>
-              <div className='transparent50'>Features & Traits</div>
-              <div className='transparent50'>Background</div>
-              <div className='transparent50'>Notes</div>
-              <div className='transparent50'>Extras</div>
-            </div>
-            <div>
-              {/* Content */}
-              <div id="Actions" className='testborder information-block'></div>
-              <div id="Spells" className='testborder information-block'></div>
-              <div id="Inventory" className='testborder information-block'></div>
-              <div id="Features-&-Traits" className='testborder information-block'></div>
-              <div id="Background" className='testborder information-block'></div>
-              <div id="Notes" className='testborder information-block'></div>
-              <div id="Extras" className='testborder information-block'></div>
-            </div>
+            {tab.label}
           </div>
+        ))}
+      </div>
+      <div>
+        {/* Content */}
+        {tabs.map((tab) => (
+          <div
+            key={tab.id}
+            id={tab.id}
+            className={`testborder information-block ${
+              activeTab === tab.id ? "" : "hidden"
+            }`}
+          >
+            Content for {tab.label}
+          </div>
+        ))}
+      </div>
+
+      {/* CSS for hidden class */}
+      <style>
+        {`
+          .hidden {
+            display: none;
+          }
+        `}
+      </style>
+    </div>
         </div>
       </div>
     </div>
